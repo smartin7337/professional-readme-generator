@@ -1,12 +1,8 @@
-// TODO: Include packages needed for this application
-
-// TODO: Create an array of questions for user input
-const questions = [];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
 
-// TODO: Create a function to initialize app
+// Create a function to initialize app
 function init() {}
 
 // Function call to initialize app
@@ -18,18 +14,6 @@ const generateMarkdown = require("./utils/generateMarkdown.js");
 
 inquirer
   .prompt([
-    // {
-    //   name: "name",
-    //   type: "input",
-    //   message: "What's your name?",
-    // },
-    // {
-    //   name: "iceCream",
-    //   type: "list",
-    //   message: "Which is your favorite of the following ice cream flavors?",
-    //   choices: ["green tea", "poppyseed jam", "chile", "vanilla"],
-    //   default: 3,
-    // },
 
     {
       name: "projectTitle",
@@ -44,23 +28,23 @@ inquirer
     {
       name: "installation",
       type: "input",
-      message: "How to install the project:",
+      message: "How do you install/run your project?",
     },
     {
       name: "usage",
       type: "input",
-      message: "What is the usage?",
+      message: "How will this project be used?",
     },
     {
       name: "contributing",
       type: "input",
-      message: "Who is contribtuing?",
+      message: "Who is contribtuing to this project?",
     },
 
     {
       name: "tests",
       type: "input",
-      message: "What are the tests?",
+      message: "What are the tests for this project?",
     },
     {
       name: "userName",
@@ -75,8 +59,8 @@ inquirer
     {
       type: "list",
       name: "license",
-      message: "Which Which license would you like to use?",
-      choices: ["a", "b", "c", "d"],
+      message: "Which license will you use?",
+      choices: ["MIT Open Source License", "GNU GP License", "Apache License"],
     },
   ])
   .then((answers) => {
@@ -87,9 +71,4 @@ inquirer
     fs.writeFileSync("./markdown.md", markdown);
   });
 
-//project title, description, table of contents, installation,
-//usage, license, contributing, tests, and questions
-//choose license from a list of options
-//license corresponds to a badge
-//questions section includes github username/url link, email address is added
-//table of contents has to move section to section
+//Need: project title, description, table of contents, installation, usage, license, contributing, tests, and questions, choose license from a list of options, license corresponds to a badge, questions section includes github username/url link, email address is added, table of contents has to move section to section
